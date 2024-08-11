@@ -31,8 +31,20 @@
         <spring-cloud.version>2023.0.3</spring-cloud.version>
         <io.malek.common.version>1.0-SNAPSHOT</io.malek.common.version>
         <liquibase.version>4.29.1</liquibase.version>
+        <vavr.version>0.10.4</vavr.version>
+        <jackson.datatype.version>2.17.2</jackson.datatype.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.datatype.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>${vavr.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
