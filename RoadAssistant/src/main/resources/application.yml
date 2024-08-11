@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: @name@
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    username: dev
+    password: dev
+    url: jdbc:postgresql://localhost:5432/roadAssistantDevDb
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: loggers,info,health,metrics,prometheus
+
+server:
+  port: 9090
