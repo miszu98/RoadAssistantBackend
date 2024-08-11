@@ -17,6 +17,11 @@ class RoadIncidentConfiguration {
     }
 
     @Bean
+    RoadIncidentScheduler roadIncidentScheduler() {
+        return new RoadIncidentScheduler(roadIncidentFacade());
+    }
+
+    @Bean
     ObjectMapper objectMapper() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
