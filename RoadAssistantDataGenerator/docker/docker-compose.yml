@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    container_name: roadAssistantDataGeneratorDevDb
+    image: postgres:15
+    environment:
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev
+      POSTGRES_DB: roadAssistantDataGeneratorDevDb
+    ports:
+      - "5050:5432"
+    volumes:
+      - roadAssistantDataGeneratorDevDb:/var/lib/postgresql/data
+
+volumes:
+  roadAssistantDataGeneratorDevDb:
+    driver: local
