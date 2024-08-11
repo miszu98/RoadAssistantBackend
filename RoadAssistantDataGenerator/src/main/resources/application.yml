@@ -1,6 +1,15 @@
 spring:
   application:
     name: @name@
+  datasource:
+    username: dev
+    password: dev
+    url: jdbc:postgresql://localhost:5050/roadAssistantDataGeneratorDevDb
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
 
 eureka:
   client:
