@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 interface RoadIncidentJpaRepository extends JpaRepository<RoadIncidentEntity, Long>, RoadIncidentRepository {
-
 }

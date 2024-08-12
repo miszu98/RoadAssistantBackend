@@ -4,7 +4,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-
     <changeSet id="create-table-with-road-incidents" author="Michal Malek">
         <createTable tableName="road_incidents">
             <column name="id" type="bigint" autoIncrement="true">
@@ -29,6 +28,10 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+    </changeSet>
+
+    <changeSet id="change-road-incident-uuid-type-to-varchar" author="Michal Malek">
+        <modifyDataType tableName="road_incidents" columnName="uuid" newDataType="varchar(40)"/>
     </changeSet>
 
 </databaseChangeLog>
