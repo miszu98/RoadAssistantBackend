@@ -1,11 +1,17 @@
 package io.malek;
 
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.LocalDateTime;
 
 import static java.util.Objects.isNull;
 
-public record IncidentTime(LocalDateTime value) {
+public record IncidentTime(@JsonValue LocalDateTime value) {
+
+    public IncidentTime(String value) {
+        this(LocalDateTime.parse(value));
+    }
 
     public IncidentTime {
         if (isNull(value)) {

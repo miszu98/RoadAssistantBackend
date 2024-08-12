@@ -1,8 +1,11 @@
 package io.malek;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
+
 import static java.util.Objects.isNull;
 
-public record Longitude(Double value) {
+public record Longitude(@JsonValue Double value) {
 
     public Longitude {
         if (isNull(value)) {

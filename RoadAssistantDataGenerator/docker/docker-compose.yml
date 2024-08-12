@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  db:
+  roadAssistantDataGeneratorDevDb:
     container_name: roadAssistantDataGeneratorDevDb
     image: postgres:15
     environment:

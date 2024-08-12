@@ -1,10 +1,12 @@
 package io.malek;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.UUID;
 
 import static java.util.Objects.isNull;
 
-public record RoadIncidentUuid(UUID value) {
+public record RoadIncidentUuid(@JsonValue String value) {
 
     public RoadIncidentUuid {
         if (isNull(value)) {
@@ -13,11 +15,11 @@ public record RoadIncidentUuid(UUID value) {
     }
 
     public static RoadIncidentUuid newOne() {
-        return new RoadIncidentUuid(UUID.randomUUID());
+        return new RoadIncidentUuid(UUID.randomUUID().toString());
     }
 
     public static RoadIncidentUuid of(UUID value) {
-        return new RoadIncidentUuid(value);
+        return new RoadIncidentUuid(value.toString());
     }
 
 }
