@@ -43,3 +43,9 @@ info:
     name: @name@
     description: "Road Assistant is application for get real time information about road incidents"
     version: @version@
+
+externals:
+  api:
+    roadAssistantDataGenerator:
+      name: ROAD-ASSISTANT-DATA-GENERATOR
+      fetchEndpoint: /api/v1/road-incidents

@@ -11,7 +11,7 @@
     <groupId>io.malek</groupId>
     <artifactId>EurekaServer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>EurekaServer</name>
+    <name>EUREKA-SERVER</name>
     <description>EurekaServer</description>
     <url/>
     <licenses>

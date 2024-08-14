@@ -11,7 +11,7 @@
     <groupId>io.malek</groupId>
     <artifactId>RoadAssistant</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>RoadAssistant</name>
+    <name>ROAD-ASSISTANT</name>
     <description>RoadAssistant</description>
     <url/>
     <licenses>
@@ -31,8 +31,34 @@
         <spring-cloud.version>2023.0.3</spring-cloud.version>
         <liquibase.version>4.29.1</liquibase.version>
         <openapi.version>2.0.2</openapi.version>
+        <io.malek.common.version>1.0-SNAPSHOT</io.malek.common.version>
+        <shedlock.version>5.13.0</shedlock.version>
+        <shedlock.jdbc.provider.version>5.10.0</shedlock.jdbc.provider.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.javacrumbs.shedlock</groupId>
+            <artifactId>shedlock-spring</artifactId>
+            <version>${shedlock.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.javacrumbs.shedlock</groupId>
+            <artifactId>shedlock-provider-jdbc-template</artifactId>
+            <version>${shedlock.jdbc.provider.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.malek</groupId>
+            <artifactId>common</artifactId>
+            <version>${io.malek.common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
