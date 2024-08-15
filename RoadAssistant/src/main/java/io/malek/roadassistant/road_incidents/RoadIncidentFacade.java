@@ -1,11 +1,6 @@
-package io.malek.roadassistant;
+package io.malek.roadassistant.road_incidents;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.malek.roadassistant.externals.ExternalApiResponse;
-import io.malek.roadassistant.refreshers.RoadIncidentApiRefresher;
-import io.malek.roadassistant.service.WebSocketCommunicationService;
-import io.malek.roadassistant.service.WebSocketJsonCommunicationService;
-import io.malek.roadassistant.websockets.WebSocketSessionLoader;
 import io.vavr.control.Try;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

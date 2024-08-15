@@ -1,7 +1,5 @@
-package io.malek.roadassistant.events.handlers;
+package io.malek.roadassistant.road_incidents;
 
-import io.malek.roadassistant.websockets.WebSocketSessionLoader;
-import io.malek.roadassistant.events.ClientConnectedEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;

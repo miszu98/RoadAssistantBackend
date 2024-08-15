@@ -1,6 +1,5 @@
-package io.malek.roadassistant.schedulers;
+package io.malek.roadassistant.road_incidents;
 
-import io.malek.roadassistant.RoadIncidentFacade;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class RoadIncidentRefreshScheduler {
+class RoadIncidentRefreshScheduler {
     private final RoadIncidentFacade roadIncidentFacade;
 
     @Scheduled(cron = "*/30 * * * * *")

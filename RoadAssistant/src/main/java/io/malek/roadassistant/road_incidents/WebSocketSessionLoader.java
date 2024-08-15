@@ -1,8 +1,8 @@
-package io.malek.roadassistant.websockets;
+package io.malek.roadassistant.road_incidents;
 
 import org.springframework.web.socket.WebSocketSession;
 
-public interface WebSocketSessionLoader {
+interface WebSocketSessionLoader {
 
     void loadSession(WebSocketSession session);
     void removeSession();

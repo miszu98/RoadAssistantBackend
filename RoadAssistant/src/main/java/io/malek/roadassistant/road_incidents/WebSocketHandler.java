@@ -1,7 +1,5 @@
-package io.malek.roadassistant.websockets;
+package io.malek.roadassistant.road_incidents;
 
-import io.malek.roadassistant.events.ClientConnectedEvent;
-import io.malek.roadassistant.events.ClientDisconnectedEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
@@ -14,7 +12,7 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class WebSocketHandler extends TextWebSocketHandler {
+class WebSocketHandler extends TextWebSocketHandler {
 
     private final ApplicationEventPublisher eventPublisher;
 

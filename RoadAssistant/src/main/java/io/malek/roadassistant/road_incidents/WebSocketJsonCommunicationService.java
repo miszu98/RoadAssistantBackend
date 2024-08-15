@@ -1,6 +1,5 @@
-package io.malek.roadassistant.service;
+package io.malek.roadassistant.road_incidents;
 
-import io.malek.roadassistant.exception.WebSocketCommunicationException;
 import io.vavr.control.Try;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +8,7 @@ import org.springframework.web.socket.WebSocketSession;
 
 @Slf4j
 @RequiredArgsConstructor
-public class WebSocketJsonCommunicationService implements WebSocketCommunicationService<String> {
+class WebSocketJsonCommunicationService implements WebSocketCommunicationService<String> {
     private final WebSocketSession webSocketSession;
 
     @Override

@@ -1,9 +1,9 @@
-package io.malek.roadassistant.exception;
+package io.malek.roadassistant.road_incidents;
 
 import lombok.Getter;
 
 @Getter
-public class WebSocketCommunicationException extends RuntimeException {
+class WebSocketCommunicationException extends RuntimeException {
     public WebSocketCommunicationException(String message) {
         super(message);
     }

@@ -1,4 +1,4 @@
-package io.malek.roadassistant.global;
+package io.malek.roadassistant.road_incidents;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class OpenApiConfig {
+class OpenApiConfig {
 
     @Bean
     GroupedOpenApi groupedOpenApi() {
