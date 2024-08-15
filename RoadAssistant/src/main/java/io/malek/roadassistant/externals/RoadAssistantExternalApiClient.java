@@ -15,4 +15,9 @@ interface RoadAssistantExternalApiClient extends RoadIncidentExternalApiClient<R
     @GetMapping("${externals.api.roadAssistantDataGenerator.fetchEndpoint}")
     Page<RoadIncident> getRoadIncidents(@RequestParam LocalDate incidentTime, @RequestParam Pageable pageable);
 
+    @Override
+    default ApiSourceName getApiSourceName() {
+        return ApiSourceName.ROAD_ASSISTANT_DATA_GENERATOR;
+    }
+
 }

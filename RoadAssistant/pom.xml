@@ -34,8 +34,14 @@
         <io.malek.common.version>1.0-SNAPSHOT</io.malek.common.version>
         <shedlock.version>5.13.0</shedlock.version>
         <shedlock.jdbc.provider.version>5.10.0</shedlock.jdbc.provider.version>
+        <vavr.version>0.10.4</vavr.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>${vavr.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>

@@ -9,4 +9,6 @@ public interface RoadIncidentExternalApiClient<T> {
 
     Page<T> getRoadIncidents(LocalDate incidentTime, Pageable pageable);
 
+    ApiSourceName getApiSourceName();
+
 }
