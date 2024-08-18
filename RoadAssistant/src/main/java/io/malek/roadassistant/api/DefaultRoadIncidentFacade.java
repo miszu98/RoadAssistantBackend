@@ -1,49 +1,38 @@
-package io.malek.roadassistant;
+package io.malek.roadassistant.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.malek.RoadIncident;
+import io.malek.roadassistant.websockets.WebSocketCommunicationService;
 import io.vavr.control.Try;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
-import org.springframework.web.socket.WebSocketSession;
 
 import java.time.LocalDate;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static java.util.Objects.nonNull;
-
 
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class RoadIncidentFacade implements WebSocketSessionLoader {
-    private WebSocketCommunicationService<String> webSocketCommunicationService;
+class DefaultRoadIncidentFacade implements RoadIncidentFacade {
     private final ObjectMapper objectMapper;
-    private final RoadIncidentApi<Set<ExternalApiResponse<?>>> roadIncidentApi;
+    private final RoadIncidentApi<Set<ExternalApiResponse<RoadIncident>>> roadIncidentApi;
+    private final WebSocketCommunicationService<String> webSocketCommunicationService;
 
     public void broadcastLatestRoadIncidents() {
         Set<String> roadIncidentsJsons = loadRoadIncidents(LocalDate.now(), Pageable.unpaged());
-        if (nonNull(webSocketCommunicationService)) {
+        if (webSocketCommunicationService.clientIsConnected()) {
             log.info("Client is connected to webSocket, trying to send information about latest road incidents");
-            roadIncidentsJsons.forEach(roadIncidentJson -> webSocketCommunicationService.sendMessage(roadIncidentJson));
+            roadIncidentsJsons.forEach(webSocketCommunicationService::sendMessage);
             return;
         } log.warn("Client is not connected, skip broadcasting latest road incidents");
     }
 
-    @Override
-    public void loadSession(WebSocketSession session) {
-        webSocketCommunicationService = new WebSocketJsonCommunicationService(session);
-    }
-
-    @Override
-    public void removeSession() {
-        webSocketCommunicationService = null;
-    }
-
     private Set<String> loadRoadIncidents(LocalDate incidentTime, Pageable pageable) {
-        Set<ExternalApiResponse<?>> externalApiResponses = roadIncidentApi.refreshRoadIncidents(incidentTime, pageable);
+        Set<ExternalApiResponse<RoadIncident>> externalApiResponses = roadIncidentApi.refreshRoadIncidents(incidentTime, pageable);
         return externalApiResponses.stream().map(externalApiResponse -> convertRoadIncidentToJson(externalApiResponse.roadIncidents()))
                 .collect(Collectors.toSet());
     }

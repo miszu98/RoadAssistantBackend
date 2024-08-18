@@ -1,5 +1,6 @@
-package io.malek.roadassistant;
+package io.malek.roadassistant.schedulers;
 
+import io.malek.roadassistant.api.RoadIncidentFacade;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;

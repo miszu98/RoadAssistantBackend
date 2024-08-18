@@ -1,15 +1,17 @@
-package io.malek.roadassistant;
+package io.malek.roadassistant.websockets;
 
 import io.vavr.control.Try;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
+import static java.util.Objects.nonNull;
+
 @Slf4j
-@RequiredArgsConstructor
+@Service
 class WebSocketJsonCommunicationService implements WebSocketCommunicationService<String> {
-    private final WebSocketSession webSocketSession;
+    private WebSocketSession webSocketSession;
 
     @Override
     public void sendMessage(String message) {
@@ -17,6 +19,21 @@ class WebSocketJsonCommunicationService implements WebSocketCommunicationService
         Try.run(() -> webSocketSession.sendMessage(new TextMessage(message)))
                 .onSuccess(result -> handleSuccessCommunicationWithWebSocket())
                 .onFailure(this::handleFailureCommunicationWithWebSocket);
+    }
+
+    @Override
+    public void loadSession(WebSocketSession session) {
+        this.webSocketSession = session;
+    }
+
+    @Override
+    public void removeSession() {
+        this.webSocketSession = null;
+    }
+
+    @Override
+    public boolean clientIsConnected() {
+        return nonNull(webSocketSession);
     }
 
     private void handleSuccessCommunicationWithWebSocket() {

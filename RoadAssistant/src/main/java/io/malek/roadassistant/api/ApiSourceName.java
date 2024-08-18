@@ -1,4 +1,4 @@
-package io.malek.roadassistant;
+package io.malek.roadassistant.api;
 
 enum ApiSourceName {
     TOMTOM,

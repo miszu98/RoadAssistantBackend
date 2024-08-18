@@ -1,4 +1,4 @@
-package io.malek.roadassistant;
+package io.malek.roadassistant.configurations;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

@@ -1,11 +1,11 @@
-package io.malek.roadassistant;
+package io.malek.roadassistant.events;
 
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.web.socket.WebSocketSession;
 
 @Getter
-class ClientConnectedEvent extends ApplicationEvent {
+public class ClientConnectedEvent extends ApplicationEvent {
     private WebSocketSession session;
 
     public ClientConnectedEvent(Object source, WebSocketSession session) {

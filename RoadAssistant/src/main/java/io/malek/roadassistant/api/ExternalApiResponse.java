@@ -1,4 +1,4 @@
-package io.malek.roadassistant;
+package io.malek.roadassistant.api;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;

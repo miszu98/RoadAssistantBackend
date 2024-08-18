@@ -1,4 +1,4 @@
-package io.malek.roadassistant;
+package io.malek.roadassistant.api;
 
 import org.springframework.data.domain.Pageable;
 
