@@ -6,17 +6,14 @@ import io.malek.roadassistant.events.ClientDisconnectedEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 
 @Slf4j
-@Component
 @RequiredArgsConstructor
 class WebSocketHandler extends TextWebSocketHandler {
-
     private final ApplicationEventPublisher eventPublisher;
 
     @Override

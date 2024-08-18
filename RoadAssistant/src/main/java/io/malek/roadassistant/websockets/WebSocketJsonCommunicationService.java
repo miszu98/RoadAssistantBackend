@@ -2,14 +2,12 @@ package io.malek.roadassistant.websockets;
 
 import io.vavr.control.Try;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
 import static java.util.Objects.nonNull;
 
 @Slf4j
-@Service
 class WebSocketJsonCommunicationService implements WebSocketCommunicationService<String> {
     private WebSocketSession webSocketSession;
 
