@@ -1,4 +1,4 @@
-package io.malek.roadassistant.road_incidents;
+package io.malek.roadassistant;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

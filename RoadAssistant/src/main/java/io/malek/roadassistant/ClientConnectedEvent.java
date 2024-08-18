@@ -1,4 +1,4 @@
-package io.malek.roadassistant.road_incidents;
+package io.malek.roadassistant;
 
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;

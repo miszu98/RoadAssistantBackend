@@ -1,4 +1,4 @@
-package io.malek.roadassistant.road_incidents;
+package io.malek.roadassistant;
 
 import io.malek.RoadIncident;
 import org.springframework.cloud.openfeign.FeignClient;

@@ -1,4 +1,4 @@
-package io.malek.roadassistant.road_incidents;
+package io.malek.roadassistant;
 
 import org.springframework.web.socket.WebSocketSession;
 

@@ -1,4 +1,4 @@
-package io.malek.roadassistant.road_incidents;
+package io.malek.roadassistant;
 
 import net.javacrumbs.shedlock.core.LockProvider;
 import net.javacrumbs.shedlock.provider.jdbctemplate.JdbcTemplateLockProvider;

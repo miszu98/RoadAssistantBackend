@@ -1,5 +1,6 @@
-package io.malek.roadassistant.road_incidents;
+package io.malek.roadassistant;
 
+import io.malek.RoadIncident;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
@@ -12,11 +13,12 @@ import java.util.stream.Collectors;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-class RoadIncidentApiRefresher {
+class RoadIncidentApiRefresher implements RoadIncidentApi<Set<ExternalApiResponse<RoadIncident>>> {
 
-    private final Set<RoadIncidentExternalApiClient<?>> roadIncidentExternalApiClients;
+    private final Set<RoadIncidentExternalApiClient<RoadIncident>> roadIncidentExternalApiClients;
 
-    public Set<ExternalApiResponse<?>> refreshRoadIncidents(LocalDate incidentTime, Pageable pageable) {
+    @Override
+    public Set<ExternalApiResponse<RoadIncident>> refreshRoadIncidents(LocalDate incidentTime, Pageable pageable) {
         return roadIncidentExternalApiClients.stream()
                 .map(client -> ExternalApiResponse.of(client.getApiSourceName(), client.getRoadIncidents(incidentTime, pageable)))
                 .collect(Collectors.toSet());

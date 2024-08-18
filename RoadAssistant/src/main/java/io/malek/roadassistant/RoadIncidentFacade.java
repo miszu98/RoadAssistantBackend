@@ -1,4 +1,4 @@
-package io.malek.roadassistant.road_incidents;
+package io.malek.roadassistant;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.vavr.control.Try;
@@ -21,7 +21,7 @@ import static java.util.Objects.nonNull;
 public class RoadIncidentFacade implements WebSocketSessionLoader {
     private WebSocketCommunicationService<String> webSocketCommunicationService;
     private final ObjectMapper objectMapper;
-    private final RoadIncidentApiRefresher roadIncidentApiRefresher;
+    private final RoadIncidentApi<Set<ExternalApiResponse<?>>> roadIncidentApi;
 
     public void broadcastLatestRoadIncidents() {
         Set<String> roadIncidentsJsons = loadRoadIncidents(LocalDate.now(), Pageable.unpaged());
@@ -43,7 +43,7 @@ public class RoadIncidentFacade implements WebSocketSessionLoader {
     }
 
     private Set<String> loadRoadIncidents(LocalDate incidentTime, Pageable pageable) {
-        Set<ExternalApiResponse<?>> externalApiResponses = roadIncidentApiRefresher.refreshRoadIncidents(incidentTime, pageable);
+        Set<ExternalApiResponse<?>> externalApiResponses = roadIncidentApi.refreshRoadIncidents(incidentTime, pageable);
         return externalApiResponses.stream().map(externalApiResponse -> convertRoadIncidentToJson(externalApiResponse.roadIncidents()))
                 .collect(Collectors.toSet());
     }

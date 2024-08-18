@@ -1,4 +1,4 @@
-package io.malek.roadassistant.road_incidents;
+package io.malek.roadassistant;
 
 import io.vavr.control.Try;
 import lombok.RequiredArgsConstructor;

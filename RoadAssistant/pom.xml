@@ -20,6 +20,10 @@
     <developers>
         <developer/>
     </developers>
+<!--    <modules>-->
+<!--        <module>websockets</module>-->
+<!--        <module>externals</module>-->
+<!--    </modules>-->
     <scm>
         <connection/>
         <developerConnection/>
@@ -35,6 +39,8 @@
         <shedlock.version>5.13.0</shedlock.version>
         <shedlock.jdbc.provider.version>5.10.0</shedlock.jdbc.provider.version>
         <vavr.version>0.10.4</vavr.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
@@ -111,6 +117,16 @@
             <artifactId>liquibase-core</artifactId>
             <version>${liquibase.version}</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.malek.roadassistant</groupId>-->
+<!--            <artifactId>websockets</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.malek.roadassistant</groupId>-->
+<!--            <artifactId>externals</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
     </dependencies>
     <dependencyManagement>
         <dependencies>
