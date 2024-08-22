@@ -1,4 +1,4 @@
-package io.malek.roadassistant;
+package io.malek.roadassistant.architecture;
 
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;

@@ -21,9 +21,9 @@ class DefaultRoadIncidentFacade implements RoadIncidentFacade {
     private final WebSocketCommunicationService<String> webSocketCommunicationService;
 
     public void broadcastLatestRoadIncidents() {
-        Set<String> roadIncidentsJsons = loadRoadIncidents(LocalDate.now(), Pageable.unpaged());
         if (webSocketCommunicationService.clientIsConnected()) {
             log.info("Client is connected to webSocket, trying to send information about latest road incidents");
+            Set<String> roadIncidentsJsons = loadRoadIncidents(LocalDate.now(), Pageable.unpaged());
             roadIncidentsJsons.forEach(webSocketCommunicationService::sendMessage);
             return;
         } log.warn("Client is not connected, skip broadcasting latest road incidents");
