@@ -4,6 +4,7 @@ package io.malek;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 import static java.util.Objects.isNull;
 
@@ -27,4 +28,18 @@ public record IncidentTime(@JsonValue LocalDateTime value) {
         return new IncidentTime(LocalDateTime.now());
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        IncidentTime that = (IncidentTime) o;
+
+        return Objects.equals(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return value != null ? value.hashCode() : 0;
+    }
 }

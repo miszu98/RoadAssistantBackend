@@ -1,4 +1,4 @@
-package io.malek.roadassistantauthorization;
+package io.malek.roadassistantauthorization.user;
 
 import io.malek.RoleType;
 import jakarta.persistence.*;

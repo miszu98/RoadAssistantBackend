@@ -1,4 +1,4 @@
-package io.malek.roadassistantauthorization;
+package io.malek.roadassistantauthorization.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

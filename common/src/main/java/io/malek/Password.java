@@ -1,5 +1,6 @@
 package io.malek;
 
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
@@ -26,4 +27,18 @@ public record Password(String value) {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Password password = (Password) o;
+
+        return Objects.equals(value, password.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return value != null ? value.hashCode() : 0;
+    }
 }
