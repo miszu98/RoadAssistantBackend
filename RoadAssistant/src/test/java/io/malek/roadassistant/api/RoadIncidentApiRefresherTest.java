@@ -15,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import java.time.LocalDate;
 import java.util.Collections;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -36,22 +37,19 @@ class RoadIncidentApiRefresherTest {
     @Test
     void shouldReturnMappedRoadIncidentsFromExternalApi() {
         final LocalDate incidentTime = LocalDate.parse("2024-04-01");
-        final Pageable pageable = Pageable.unpaged();
 
         when(roadIncidentExternalApiClientSet.stream())
                 .thenReturn(Stream.of(roadIncidentRoadIncidentExternalApiClient));
-        when(roadIncidentRoadIncidentExternalApiClient.getRoadIncidents(incidentTime, pageable)).thenReturn(getMockApiResponse());
+        when(roadIncidentRoadIncidentExternalApiClient.getRoadIncidents(incidentTime)).thenReturn(getMockApiResponse());
         when(roadIncidentRoadIncidentExternalApiClient.getApiSourceName())
                 .thenReturn(ApiSourceName.ROAD_ASSISTANT_DATA_GENERATOR);
 
-        Set<ExternalApiResponse<RoadIncident>> externalApiResponses = roadIncidentApiRefresher.refreshRoadIncidents(incidentTime, pageable);
+        Set<ExternalApiResponse<RoadIncident>> externalApiResponses = roadIncidentApiRefresher.refreshRoadIncidents(incidentTime);
         assertThatRoadIncidentApiResponse(externalApiResponses).isFullMappedApiResponse();
     }
 
-    private Page<RoadIncident> getMockApiResponse() {
-        Set<RoadIncident> content = Collections.singleton(
-                RoadIncident.now(Longitude.of(33d), Latitude.of(12d)));
-        return new PageImpl<>(content.stream().toList(), Pageable.unpaged(), content.size());
+    private List<RoadIncident> getMockApiResponse() {
+        return Collections.singletonList(RoadIncident.now(Longitude.of(33d), Latitude.of(12d)));
     }
 
 }

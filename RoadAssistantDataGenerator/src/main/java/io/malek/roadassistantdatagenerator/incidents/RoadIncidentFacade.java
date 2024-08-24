@@ -30,20 +30,19 @@ class RoadIncidentFacade {
     }
 
     @Transactional(readOnly = true)
-    public Page<RoadIncident> findRoadIncidentsByDate(IncidentTime incidentTime, Pageable pageable) {
+    public List<RoadIncident> findRoadIncidentsByDate(IncidentTime incidentTime, Pageable pageable) {
         log.info("Searching road incidents for: [{}]", incidentTime.value());
         LocalDateTime localDateTime = incidentTime.value();
         LocalDate localDate = localDateTime.toLocalDate();
-        Page<RoadIncidentReadModel> roadIncidentReadModels = roadIncidentRepository.findRoadIncidentByTime(localDate, pageable);
+        List<RoadIncidentReadModel> roadIncidentReadModels = roadIncidentRepository.findRoadIncidentByTime(localDate);
         return mapToRoadIncidents(roadIncidentReadModels, pageable);
     }
 
-    private Page<RoadIncident> mapToRoadIncidents(Page<RoadIncidentReadModel> roadIncidentReadModels, Pageable pageable) {
-        log.info("Mapping loaded road incidents read models: [{}]", roadIncidentReadModels.getSize());
-        List<RoadIncidentReadModel> pageContent = roadIncidentReadModels.getContent();
-        List<RoadIncident> roadIncidents = pageContent.stream().map(this::mapToRoadIncident).toList();
+    private List<RoadIncident> mapToRoadIncidents(List<RoadIncidentReadModel> roadIncidentReadModels, Pageable pageable) {
+        log.info("Mapping loaded road incidents read models: [{}]", roadIncidentReadModels.size());
+        List<RoadIncident> roadIncidents = roadIncidentReadModels.stream().map(this::mapToRoadIncident).toList();
         log.info("Creating new page with mapped read models to road incidents dto");
-        return new PageImpl<>(roadIncidents, pageable, roadIncidentReadModels.getTotalElements());
+        return roadIncidents;
     }
 
     private RoadIncident mapToRoadIncident(RoadIncidentReadModel rm) {

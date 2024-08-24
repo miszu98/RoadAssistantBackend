@@ -17,7 +17,7 @@ class RoadIncidentApiResponseAssert {
     RoadIncidentApiResponseAssert isFullMappedApiResponse() {
         assertEquals(1, externalApiResponses.size());
         ExternalApiResponse<RoadIncident> externalApiResponse = externalApiResponses.iterator().next();
-        List<RoadIncident> content = externalApiResponse.roadIncidents().getContent();
+        List<RoadIncident> content = externalApiResponse.roadIncidents();
         assertEquals(externalApiResponse.apiSourceName(), ApiSourceName.ROAD_ASSISTANT_DATA_GENERATOR);
         assertEquals(1, content.size());
         assertEquals(12d, content.get(0).latitude().value());

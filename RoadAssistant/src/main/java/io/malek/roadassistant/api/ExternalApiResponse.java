@@ -3,10 +3,12 @@ package io.malek.roadassistant.api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 
+import java.util.List;
+
 import static java.util.Objects.isNull;
 
 @Slf4j
-record ExternalApiResponse<T>(ApiSourceName apiSourceName, Page<T> roadIncidents) {
+record ExternalApiResponse<T>(ApiSourceName apiSourceName, List<T> roadIncidents) {
 
     ExternalApiResponse {
         boolean argumentsAreNull = isNull(apiSourceName) || isNull(roadIncidents);
@@ -16,7 +18,7 @@ record ExternalApiResponse<T>(ApiSourceName apiSourceName, Page<T> roadIncidents
         }
     }
 
-    static <T> ExternalApiResponse<T> of(ApiSourceName apiSourceName, Page<T> roadIncidents) {
+    static <T> ExternalApiResponse<T> of(ApiSourceName apiSourceName, List<T> roadIncidents) {
         return new <T> ExternalApiResponse<T>(apiSourceName, roadIncidents);
     }
 

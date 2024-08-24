@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @RestController
@@ -21,7 +22,7 @@ class RoadIncidentController {
     private final RoadIncidentFacade roadIncidentFacade;
 
     @GetMapping
-    ResponseEntity<Page<RoadIncident>> findRoadIncidentsByTime(@RequestParam LocalDate incidentTime, Pageable pageable) {
+    ResponseEntity<List<RoadIncident>> findRoadIncidentsByTime(@RequestParam LocalDate incidentTime, Pageable pageable) {
         return ResponseEntity.ok().body(roadIncidentFacade.findRoadIncidentsByDate(IncidentTime.of(incidentTime.atStartOfDay()), pageable));
     }
 

@@ -46,15 +46,14 @@ class DefaultRoadIncidentFacadeTest {
         List<RoadIncident> roadIncidents = new ArrayList<>();
         roadIncidents.add(RoadIncident.now(Longitude.of(10d), Latitude.of(20d)));
         roadIncidents.add(RoadIncident.now(Longitude.of(23d), Latitude.of(9d)));
-        PageImpl<RoadIncident> page = new PageImpl<>(roadIncidents);
-        ExternalApiResponse<RoadIncident> roadIncidentExternalApiResponse = ExternalApiResponse.of(ApiSourceName.ROAD_ASSISTANT_DATA_GENERATOR, page);
+        ExternalApiResponse<RoadIncident> roadIncidentExternalApiResponse = ExternalApiResponse.of(ApiSourceName.ROAD_ASSISTANT_DATA_GENERATOR, roadIncidents);
 
         when(webSocketCommunicationService.clientIsConnected()).thenReturn(true);
-        when(roadIncidentApi.refreshRoadIncidents(any(), any()))
+        when(roadIncidentApi.refreshRoadIncidents(any()))
                 .thenReturn(Set.of(roadIncidentExternalApiResponse));
 
         defaultRoadIncidentFacade.broadcastLatestRoadIncidents();
 
-        verify(roadIncidentApi).refreshRoadIncidents(any(), any());
+        verify(roadIncidentApi).refreshRoadIncidents(any());
     }
 }

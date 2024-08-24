@@ -6,7 +6,6 @@ import io.malek.roadassistant.websockets.WebSocketCommunicationService;
 import io.vavr.control.Try;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -23,14 +22,14 @@ class DefaultRoadIncidentFacade implements RoadIncidentFacade {
     public void broadcastLatestRoadIncidents() {
         if (webSocketCommunicationService.clientIsConnected()) {
             log.info("Client is connected to webSocket, trying to send information about latest road incidents");
-            Set<String> roadIncidentsJsons = loadRoadIncidents(LocalDate.now(), Pageable.unpaged());
+            Set<String> roadIncidentsJsons = loadRoadIncidents(LocalDate.now());
             roadIncidentsJsons.forEach(webSocketCommunicationService::sendMessage);
             return;
         } log.warn("Client is not connected, skip broadcasting latest road incidents");
     }
 
-    private Set<String> loadRoadIncidents(LocalDate incidentTime, Pageable pageable) {
-        Set<ExternalApiResponse<RoadIncident>> externalApiResponses = roadIncidentApi.refreshRoadIncidents(incidentTime, pageable);
+    private Set<String> loadRoadIncidents(LocalDate incidentTime) {
+        Set<ExternalApiResponse<RoadIncident>> externalApiResponses = roadIncidentApi.refreshRoadIncidents(incidentTime);
         return externalApiResponses.stream().map(externalApiResponse -> convertRoadIncidentToJson(externalApiResponse.roadIncidents()))
                 .collect(Collectors.toSet());
     }

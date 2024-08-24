@@ -1,13 +1,13 @@
 package io.malek.roadassistant.api;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.time.LocalDate;
+import java.util.List;
 
 interface RoadIncidentExternalApiClient<T> {
 
-    Page<T> getRoadIncidents(LocalDate incidentTime, Pageable pageable);
+    List<T> getRoadIncidents(LocalDate incidentTime);
 
     ApiSourceName getApiSourceName();
 
