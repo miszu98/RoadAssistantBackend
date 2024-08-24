@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  roadAssistantAuthorizationDevDb:
+    container_name: roadAssistantAuthorizationDevDb
+    image: postgres:15
+    environment:
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev
+      POSTGRES_DB: roadAssistantAuthorizationDevDb
+    ports:
+      - "1011:5432"
+    volumes:
+      - roadAssistantAuthorizationDevDb:/var/lib/postgresql/data
+
+volumes:
+  roadAssistantAuthorizationDevDb:
+    driver: local

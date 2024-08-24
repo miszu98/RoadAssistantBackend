@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: @name@
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    username: dev
+    password: dev
+    url: jdbc:postgresql://localhost:1011/roadAssistantAuthorizationDevDb
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: false
+
+management:
+  info:
+    env:
+      enabled: true
+    build:
+      enabled: true
+    git:
+      enabled: true
+    java:
+      enabled: true
+    os:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: loggers,info,health,metrics,prometheus
+
+server:
+  port: 6066
+
+info:
+  app:
+    name: @name@
+    description: "RoadAssistantAuthorization is application for store, register and authorize user"
+    version: @version@
