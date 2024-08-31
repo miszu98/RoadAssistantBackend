@@ -31,8 +31,14 @@
         <spring-cloud.version>2023.0.3</spring-cloud.version>
         <io.malek.common.version>1.0-SNAPSHOT</io.malek.common.version>
         <liquibase.version>4.29.1</liquibase.version>
+        <openapi.version>2.0.2</openapi.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>${openapi.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>

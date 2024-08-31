@@ -1,5 +1,7 @@
 package io.malek;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 import java.util.Objects;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
@@ -12,6 +14,7 @@ public record LastName(String value) {
         }
     }
 
+    @JsonCreator
     public static LastName of(String value) {
         return new LastName(value);
     }

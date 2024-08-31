@@ -17,9 +17,15 @@
         <org.apache.commons.lang3.version>3.16.0</org.apache.commons.lang3.version>
         <junit.version>4.13.2</junit.version>
         <junit.jupiter.params.version>5.11.0-M2</junit.jupiter.params.version>
+        <vavr.version>0.10.4</vavr.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>${vavr.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>

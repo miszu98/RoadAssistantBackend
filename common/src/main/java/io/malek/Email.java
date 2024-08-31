@@ -1,6 +1,8 @@
 package io.malek;
 
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 import java.util.Objects;
 import java.util.regex.Pattern;
 import static org.apache.commons.lang3.StringUtils.isBlank;
@@ -18,6 +20,7 @@ public record Email(String value) {
         validateEmail(value);
     }
 
+    @JsonCreator
     public static Email of(String value) {
         return new Email(value);
     }

@@ -1,10 +1,8 @@
 package io.malek.roadassistantauthorization.user;
 
-import io.malek.Email;
-import io.malek.FirstName;
-import io.malek.LastName;
-import io.malek.Password;
+import io.malek.*;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -25,21 +23,26 @@ import static java.util.Objects.isNull;
 class User {
 
     @Id
+    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @Embedded
     @AttributeOverride(name = "value", column = @Column(name = "email"))
     private Email email;
 
+    @NotNull
     @Embedded
     @AttributeOverride(name = "value", column = @Column(name = "password"))
-    private Password password;
+    private HashPassword password;
 
+    @NotNull
     @Embedded
     @AttributeOverride(name = "value", column = @Column(name = "first_name"))
     private FirstName firstName;
 
+    @NotNull
     @Embedded
     @AttributeOverride(name = "value", column = @Column(name = "last_name"))
     private LastName lastName;
@@ -60,15 +63,6 @@ class User {
             return;
         }
         throw new IllegalArgumentException("You have to provide correct current email to set new email");
-    }
-
-    public void changePassword(String oldPassword, String newPassword) {
-        boolean currentPasswordIsEqualWithOldPassword = password.equals(Password.of(oldPassword));
-        if (currentPasswordIsEqualWithOldPassword) {
-            password = Password.of(newPassword);
-            return;
-        }
-        throw new IllegalArgumentException("You have to provide correct current password to set new password");
     }
 
 }

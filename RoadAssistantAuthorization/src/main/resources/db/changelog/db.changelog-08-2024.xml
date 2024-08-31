@@ -49,5 +49,14 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="create-initial-roles-data" author="Michal Malek">
+        <insert tableName="roles">
+            <column name="role_type" value="ADMIN"/>
+        </insert>
+        <insert tableName="roles">
+            <column name="role_type" value="USER"/>
+        </insert>
+    </changeSet>
+
 
 </databaseChangeLog>
