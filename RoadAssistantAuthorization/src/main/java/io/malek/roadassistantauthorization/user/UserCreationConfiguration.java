@@ -1,6 +1,5 @@
 package io.malek.roadassistantauthorization.user;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.malek.roadassistantauthorization.user.validators.UserValidatorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -11,16 +10,11 @@ import org.springframework.context.annotation.Configuration;
 class UserCreationConfiguration {
     private final UserValidatorService userValidatorService;
     private final UserRepository userRepository;
-    private final ObjectMapper objectMapper;
-
-    @Bean
-    UserMapper userMapper() {
-        return new DefaultUserMapper(objectMapper);
-    }
+    private final UserMapper userMapper;
 
     @Bean
     UserCreationFacade userCreationFacade() {
-        return new DefaultUserCreationFacade(userRepository, userValidatorService, userMapper());
+        return new DefaultUserCreationFacade(userRepository, userValidatorService, userMapper);
     }
 
 }

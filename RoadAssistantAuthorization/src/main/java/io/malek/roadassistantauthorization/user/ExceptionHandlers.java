@@ -16,4 +16,9 @@ class ExceptionHandlers {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(ExceptionResponse.of(LocalDateTime.now(), List.of(ex.getMessage())));
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    ResponseEntity<ExceptionResponse> handleIllegalArgumentException(IllegalArgumentException ex) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(ExceptionResponse.of(LocalDateTime.now(), List.of(ex.getMessage())));
+    }
+
 }
