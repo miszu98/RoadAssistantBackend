@@ -19,7 +19,7 @@ import static java.util.Objects.isNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
-class User {
+public class User {
 
     @Id
     @NotNull
