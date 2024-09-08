@@ -1,6 +1,5 @@
 package io.malek.roadassistantauthorization.user;
 
-import io.malek.RoleType;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -8,7 +8,7 @@ import static org.apache.logging.log4j.util.Strings.isBlank;
 
 
 public record Password(String value) {
-    private static final String PASSWORD_REGEX = "^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Za-z])[A-Za-z\\d!@#$%^&*]{8,16}$";
+    private static final String PASSWORD_REGEX = "^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Za-z])(?=.*[A-Z])[A-Za-z\\d!@#$%^&*]{8,16}$";
     private static final Pattern PASSWORD_REGEX_PATTERN = Pattern.compile(PASSWORD_REGEX);
 
     public Password {
