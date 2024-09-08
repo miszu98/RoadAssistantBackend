@@ -19,7 +19,6 @@ public record Password(String value) {
     }
 
     private void validatePassword(String value) {
-        System.out.println(value);
         boolean isNotCorrectPassword = !PASSWORD_REGEX_PATTERN.matcher(value).matches();
         if (isNotCorrectPassword) {
             throw new IllegalArgumentException("Password should has min 8 and max 16 characters, at least one special char and number");

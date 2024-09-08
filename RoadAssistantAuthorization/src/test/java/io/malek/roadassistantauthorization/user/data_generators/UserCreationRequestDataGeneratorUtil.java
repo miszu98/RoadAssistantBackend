@@ -14,8 +14,8 @@ public class UserCreationRequestDataGeneratorUtil {
                 .lastName(LastName.of("Nowak"))
                 .processId(ProcessId.newOne())
                 .email(Email.of("roman.nowak@gmail.com"))
-                .password(Password.of("gaklvsjrghra1.A"))
-                .repeatPassword(Password.of("gaklvsjrghra1.A"))
+                .password(Password.of("gakljrghra1!A"))
+                .repeatPassword(Password.of("gakljrghra1!A"))
                 .build();
     }
 
@@ -25,8 +25,8 @@ public class UserCreationRequestDataGeneratorUtil {
                 .lastName(LastName.of("Nowak"))
                 .processId(ProcessId.newOne())
                 .email(Email.of("roman.nowak@gmail.com"))
-                .password(Password.of("gaklvsjrghra1.A"))
-                .repeatPassword(Password.of("sdaAG1ASDCZXCASsad.1"))
+                .password(Password.of("gakljrghra1!A"))
+                .repeatPassword(Password.of("gakljraaghra1!A"))
                 .build();
     }
 
@@ -36,7 +36,7 @@ public class UserCreationRequestDataGeneratorUtil {
                 .lastName(LastName.of("Nowak"))
                 .processId(ProcessId.newOne())
                 .email(Email.of("roman.nowak@gmail.com"))
-                .password(Password.of("gaklvsjrghra1.A"))
+                .password(Password.of("gakljrghra1!A"))
                 .repeatPassword(null)
                 .build();
     }
@@ -47,8 +47,8 @@ public class UserCreationRequestDataGeneratorUtil {
                 .lastName(LastName.of("Nowak"))
                 .processId(ProcessId.newOne())
                 .email(null)
-                .password(Password.of("gaklvsjrghra1.A"))
-                .repeatPassword(Password.of("gaklvsjrghra1.A"))
+                .password(Password.of("gakljrghra1!A"))
+                .repeatPassword(Password.of("gakljrghra1!A"))
                 .build();
     }
 
@@ -58,8 +58,8 @@ public class UserCreationRequestDataGeneratorUtil {
                 .lastName(null)
                 .processId(ProcessId.newOne())
                 .email(Email.of("roman.nowak@gmail.com"))
-                .password(Password.of("gaklvsjrghra1.A"))
-                .repeatPassword(Password.of("gaklvsjrghra1.A"))
+                .password(Password.of("gakljrghra1!A"))
+                .repeatPassword(Password.of("gakljrghra1!A"))
                 .build();
     }
 
@@ -70,7 +70,7 @@ public class UserCreationRequestDataGeneratorUtil {
                 .processId(ProcessId.newOne())
                 .email(Email.of("roman.nowak@gmail.com"))
                 .password(null)
-                .repeatPassword(Password.of("gaklvsjrghra1.A"))
+                .repeatPassword(Password.of("gakljrghra1!A"))
                 .build();
     }
 
@@ -80,8 +80,8 @@ public class UserCreationRequestDataGeneratorUtil {
                 .lastName(LastName.of("Nowak"))
                 .processId(ProcessId.newOne())
                 .email(Email.of("roman.nowak@gmail.com"))
-                .password(Password.of("gaklvsjrghra1.A"))
-                .repeatPassword(Password.of("gaklvsjrghra1.A"))
+                .password(Password.of("gakljrghra1!A"))
+                .repeatPassword(Password.of("gakljrghra1!A"))
                 .build();
     }
 
