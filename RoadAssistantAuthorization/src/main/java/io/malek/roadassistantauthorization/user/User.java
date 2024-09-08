@@ -1,6 +1,5 @@
 package io.malek.roadassistantauthorization.user;
 
-import io.malek.*;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

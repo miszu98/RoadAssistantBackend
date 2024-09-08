@@ -1,6 +1,6 @@
 package io.malek.roadassistantauthorization.user.validators;
 
-import io.malek.Password;
+import io.malek.roadassistantauthorization.user.Password;
 import io.malek.roadassistantauthorization.user.*;
 import io.vavr.control.Try;
 import lombok.extern.slf4j.Slf4j;
@@ -13,7 +13,7 @@ import static io.malek.roadassistantauthorization.user.ValidatorName.USER_PASSWO
 class UserPasswordsEqualityValidator extends Validator<UserCreationRequest, ValidatorInfo, ValidatorName> {
 
     @Override
-    protected Set<ValidatorInfo> validate(UserCreationRequest object, Set<ValidatorInfo> validatorInfos) {
+    public Set<ValidatorInfo> validate(UserCreationRequest object, Set<ValidatorInfo> validatorInfos) {
         log.info("Starting validation passwords equality of user with process id: [{}]", object.getProcessId().value());
         return Try.of(() -> validatePasswordsEquality(object, validatorInfos))
                 .getOrElse(() -> {

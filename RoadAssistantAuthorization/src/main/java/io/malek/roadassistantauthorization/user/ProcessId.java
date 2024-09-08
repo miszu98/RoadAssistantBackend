@@ -1,4 +1,4 @@
-package io.malek;
+package io.malek.roadassistantauthorization.user;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.vavr.control.Try;

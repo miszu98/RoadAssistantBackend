@@ -7,6 +7,6 @@ import java.util.Set;
 
 public interface UserValidatorService {
 
-    Set<ValidatorInfo> validate(UserCreationRequest userCreationRequest);
+    Set<ValidatorInfo> validateRequiredFields(UserCreationRequest userCreationRequest);
 
 }

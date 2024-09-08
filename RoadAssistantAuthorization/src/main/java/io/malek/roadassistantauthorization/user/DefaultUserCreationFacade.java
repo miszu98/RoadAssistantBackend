@@ -18,7 +18,7 @@ class DefaultUserCreationFacade implements UserCreationFacade {
     @Transactional
     public UserCreationResponse create(UserCreationRequest userCreationRequest) {
         log.info("Starting user creation process");
-        Set<ValidatorInfo> validatorInfos = userValidatorService.validate(userCreationRequest);
+        Set<ValidatorInfo> validatorInfos = userValidatorService.validateRequiredFields(userCreationRequest);
         UserCreationResponse userCreationResponse = UserCreationResponse.of(validatorInfos);
         return registerUser(userCreationRequest, userCreationResponse);
     }

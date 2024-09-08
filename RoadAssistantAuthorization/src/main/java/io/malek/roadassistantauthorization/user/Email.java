@@ -1,4 +1,4 @@
-package io.malek;
+package io.malek.roadassistantauthorization.user;
 
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -9,7 +9,6 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
 
 
 public record Email(String value) {
-
     private static final String EMAIL_REGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
     private static final Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
 

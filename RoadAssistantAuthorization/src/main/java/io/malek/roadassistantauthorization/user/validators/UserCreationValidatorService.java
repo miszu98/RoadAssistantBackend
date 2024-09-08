@@ -13,7 +13,7 @@ import java.util.Set;
 class UserCreationValidatorService implements UserValidatorService {
     private Validator<UserCreationRequest, ValidatorInfo, ValidatorName> validator;
 
-    public UserCreationValidatorService() {
+    UserCreationValidatorService() {
         validator = Validator.link(
             new UserCreationProcessIdIsNullValidator(),
             new UserEmailIsNullValidator(),
@@ -26,7 +26,7 @@ class UserCreationValidatorService implements UserValidatorService {
     }
 
     @Override
-    public Set<ValidatorInfo> validate(UserCreationRequest userCreationRequest) {
+    public Set<ValidatorInfo> validateRequiredFields(UserCreationRequest userCreationRequest) {
         log.info("Starting validation process for UserCreationRequest");
         return validator.validate(userCreationRequest, new HashSet<>());
     }

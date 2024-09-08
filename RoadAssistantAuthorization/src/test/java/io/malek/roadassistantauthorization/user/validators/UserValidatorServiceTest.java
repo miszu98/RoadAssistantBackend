@@ -25,7 +25,7 @@ class UserValidatorServiceTest {
     void shouldPassedAllValidators() {
         final UserCreationRequest userCreationRequest = getCorrectUser();
 
-        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validate(userCreationRequest);
+        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validateRequiredFields(userCreationRequest);
 
         assertThatUserCreationValidation(validatorInfos).isValidatorPassed();
     }
@@ -34,7 +34,7 @@ class UserValidatorServiceTest {
     void shouldFailedAllValidators() {
         final UserCreationRequest userCreationRequest = getIncorrectUser();
 
-        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validate(userCreationRequest);
+        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validateRequiredFields(userCreationRequest);
 
         assertThatUserCreationValidation(validatorInfos).isValidatorFailed();
     }
@@ -43,14 +43,14 @@ class UserValidatorServiceTest {
     void shouldThrowExceptionWhenProcessIdIsNull() {
         final UserCreationRequest userCreationRequest = getUserCreationRequestWithoutProcessId();
         assertThrows(ProcessCannotBeExecuteException.class,
-                () -> userCreationValidatorService.validate(userCreationRequest));
+                () -> userCreationValidatorService.validateRequiredFields(userCreationRequest));
     }
 
     @Test
     void shouldFailedPasswordIsNullValidator() {
         final UserCreationRequest userCreationRequest = getUserWithNullPassword();
 
-        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validate(userCreationRequest);
+        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validateRequiredFields(userCreationRequest);
 
         assertThatUserCreationValidation(validatorInfos).isNullPasswordValidatorFailedAndSkipPasswordEqualityValidator();
     }
@@ -59,7 +59,7 @@ class UserValidatorServiceTest {
     void shouldFailedFirstNameIsNullValidator() {
         final UserCreationRequest userCreationRequest = getUserWithNullFirstName();
 
-        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validate(userCreationRequest);
+        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validateRequiredFields(userCreationRequest);
 
         assertThatUserCreationValidation(validatorInfos).isNullFirstnameValidatorFailed();
     }
@@ -68,7 +68,7 @@ class UserValidatorServiceTest {
     void shouldFailedLastNameIsNullValidator() {
         final UserCreationRequest userCreationRequest = getUserWithNullLastName();
 
-        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validate(userCreationRequest);
+        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validateRequiredFields(userCreationRequest);
 
         assertThatUserCreationValidation(validatorInfos).isNullLastnameValidatorFailed();
     }
@@ -77,7 +77,7 @@ class UserValidatorServiceTest {
     void shouldFailedEmailIsNullValidator() {
         final UserCreationRequest userCreationRequest = getUserWithNullEmail();
 
-        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validate(userCreationRequest);
+        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validateRequiredFields(userCreationRequest);
 
         assertThatUserCreationValidation(validatorInfos).isNullEmailValidatorFailed();
     }
@@ -87,7 +87,7 @@ class UserValidatorServiceTest {
     void shouldFailedPasswordRepeatIsNullValidator() {
         final UserCreationRequest userCreationRequest = getUserWithNullRepeatPassword();
 
-        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validate(userCreationRequest);
+        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validateRequiredFields(userCreationRequest);
 
         assertThatUserCreationValidation(validatorInfos).isNullPasswordRepeatValidatorFailed();
     }
@@ -96,7 +96,7 @@ class UserValidatorServiceTest {
     void shouldFailedPasswordEqualityValidatorWhenPasswordsAreDifferent() {
         final UserCreationRequest userCreationRequest = getUserWithDifferentPasswords();
 
-        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validate(userCreationRequest);
+        Set<ValidatorInfo> validatorInfos = userCreationValidatorService.validateRequiredFields(userCreationRequest);
 
         assertThatUserCreationValidation(validatorInfos).isPasswordEqualityValidatorFailed();
     }

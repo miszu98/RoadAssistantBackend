@@ -21,6 +21,8 @@ public enum ValidatorName {
     USER_PASSWORD_SPECIAL_CHARS_VALIDATOR("Password should has at least one special char: [.!@#$%^&*()/]"),
     USER_PASSWORD_NUMBER_VALIDATOR("Password should has at least one number"),
 
+    EMAIL_FORMAT_VALIDATOR("Email should has correct format"),
+
     USER_CREATION_REQUEST_PROCESS_ID_IS_NULL_VALIDATOR("User creation processId cannot be null");
 
     private String message;
