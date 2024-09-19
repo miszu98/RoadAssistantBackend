@@ -1,11 +1,14 @@
-package io.malek.roadassistantauthorization.user;
+package io.malek.roadassistantauthorization.user.dtos;
 
+
+import io.malek.roadassistantauthorization.user.enums.ValidatorStatus;
+import io.malek.roadassistantauthorization.user.enums.ProcessStatus;
 
 import java.util.Set;
 
-record UserCreationResponse(ProcessStatus processStatus, Set<ValidatorInfo> validatorInfos) {
+public record UserCreationResponse(ProcessStatus processStatus, Set<ValidatorInfo> validatorInfos) {
 
-    static UserCreationResponse of(Set<ValidatorInfo> validatorInfos) {
+    public static UserCreationResponse of(Set<ValidatorInfo> validatorInfos) {
         return new UserCreationResponse(loadProcessStatus(validatorInfos), validatorInfos);
     }
 

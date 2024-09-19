@@ -1,5 +1,9 @@
 package io.malek.roadassistantauthorization.user;
 
+import io.malek.roadassistantauthorization.user.dtos.Email;
+import io.malek.roadassistantauthorization.user.dtos.FirstName;
+import io.malek.roadassistantauthorization.user.dtos.HashPassword;
+import io.malek.roadassistantauthorization.user.dtos.LastName;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

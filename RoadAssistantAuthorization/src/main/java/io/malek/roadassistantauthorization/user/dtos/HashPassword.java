@@ -1,4 +1,4 @@
-package io.malek.roadassistantauthorization.user;
+package io.malek.roadassistantauthorization.user.dtos;
 
 import java.util.Objects;
 import java.util.regex.Pattern;

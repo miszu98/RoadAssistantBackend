@@ -1,5 +1,8 @@
 package io.malek.roadassistantauthorization.user;
 
+import io.malek.roadassistantauthorization.user.dtos.UserCreationRequest;
+import io.malek.roadassistantauthorization.user.dtos.UserCreationResponse;
+import io.malek.roadassistantauthorization.user.dtos.ValidatorInfo;
 import io.malek.roadassistantauthorization.user.validators.UserValidatorService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

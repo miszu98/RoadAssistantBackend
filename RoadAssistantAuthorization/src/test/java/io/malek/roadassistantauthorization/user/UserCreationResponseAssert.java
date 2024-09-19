@@ -1,5 +1,7 @@
 package io.malek.roadassistantauthorization.user;
 
+import io.malek.roadassistantauthorization.user.dtos.UserCreationResponse;
+import io.malek.roadassistantauthorization.user.enums.ProcessStatus;
 import lombok.RequiredArgsConstructor;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

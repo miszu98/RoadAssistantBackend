@@ -1,5 +1,7 @@
 package io.malek.roadassistantauthorization.user;
 
+import io.malek.roadassistantauthorization.user.dtos.UserCreationRequest;
+import io.malek.roadassistantauthorization.user.dtos.UserCreationResponse;
 import io.malek.roadassistantauthorization.utils.HttpStatusCodes;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

@@ -1,4 +1,4 @@
-package io.malek.roadassistantauthorization.user;
+package io.malek.roadassistantauthorization.user.dtos;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;

@@ -1,4 +1,4 @@
-package io.malek.roadassistantauthorization.user;
+package io.malek.roadassistantauthorization.user.dtos;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.vavr.control.Try;

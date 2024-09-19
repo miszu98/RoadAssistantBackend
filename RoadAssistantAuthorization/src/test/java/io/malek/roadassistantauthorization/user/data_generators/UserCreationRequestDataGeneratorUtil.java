@@ -1,6 +1,8 @@
 package io.malek.roadassistantauthorization.user.data_generators;
 
-import io.malek.roadassistantauthorization.user.*;
+import io.malek.roadassistantauthorization.user.dtos.*;
+import io.malek.roadassistantauthorization.user.enums.ValidatorName;
+import io.malek.roadassistantauthorization.user.enums.ValidatorStatus;
 
 import java.util.HashSet;
 import java.util.List;

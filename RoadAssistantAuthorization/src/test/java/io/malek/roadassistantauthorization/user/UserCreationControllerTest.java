@@ -1,5 +1,7 @@
 package io.malek.roadassistantauthorization.user;
 
+import io.malek.roadassistantauthorization.user.dtos.UserCreationRequest;
+import io.malek.roadassistantauthorization.user.enums.ProcessStatus;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

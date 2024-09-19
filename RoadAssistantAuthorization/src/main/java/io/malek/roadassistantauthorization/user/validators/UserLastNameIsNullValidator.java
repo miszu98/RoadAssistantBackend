@@ -1,7 +1,10 @@
 package io.malek.roadassistantauthorization.user.validators;
 
-import io.malek.roadassistantauthorization.user.LastName;
-import io.malek.roadassistantauthorization.user.*;
+import io.malek.roadassistantauthorization.user.dtos.LastName;
+import io.malek.roadassistantauthorization.user.dtos.UserCreationRequest;
+import io.malek.roadassistantauthorization.user.dtos.ValidatorInfo;
+import io.malek.roadassistantauthorization.user.enums.ValidatorName;
+import io.malek.roadassistantauthorization.user.enums.ValidatorStatus;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Set;

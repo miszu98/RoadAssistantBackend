@@ -1,5 +1,8 @@
-package io.malek.roadassistantauthorization.user;
+package io.malek.roadassistantauthorization.user.dtos;
 
+
+import io.malek.roadassistantauthorization.user.enums.ValidatorName;
+import io.malek.roadassistantauthorization.user.enums.ValidatorStatus;
 
 import static java.util.Objects.isNull;
 

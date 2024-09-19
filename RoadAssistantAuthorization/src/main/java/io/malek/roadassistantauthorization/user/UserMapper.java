@@ -1,5 +1,8 @@
 package io.malek.roadassistantauthorization.user;
 
+import io.malek.roadassistantauthorization.user.dtos.HashPassword;
+import io.malek.roadassistantauthorization.user.dtos.Password;
+import io.malek.roadassistantauthorization.user.dtos.UserCreationRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

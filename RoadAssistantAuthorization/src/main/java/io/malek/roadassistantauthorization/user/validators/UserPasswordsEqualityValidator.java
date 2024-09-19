@@ -1,13 +1,16 @@
 package io.malek.roadassistantauthorization.user.validators;
 
-import io.malek.roadassistantauthorization.user.Password;
-import io.malek.roadassistantauthorization.user.*;
+import io.malek.roadassistantauthorization.user.dtos.Password;
+import io.malek.roadassistantauthorization.user.dtos.UserCreationRequest;
+import io.malek.roadassistantauthorization.user.dtos.ValidatorInfo;
+import io.malek.roadassistantauthorization.user.enums.ValidatorName;
+import io.malek.roadassistantauthorization.user.enums.ValidatorStatus;
 import io.vavr.control.Try;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Set;
 
-import static io.malek.roadassistantauthorization.user.ValidatorName.USER_PASSWORDS_EQUALITY_VALIDATOR;
+import static io.malek.roadassistantauthorization.user.enums.ValidatorName.USER_PASSWORDS_EQUALITY_VALIDATOR;
 
 @Slf4j
 class UserPasswordsEqualityValidator extends Validator<UserCreationRequest, ValidatorInfo, ValidatorName> {

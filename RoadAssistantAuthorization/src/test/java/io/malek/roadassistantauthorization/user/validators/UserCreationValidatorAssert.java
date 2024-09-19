@@ -1,6 +1,6 @@
 package io.malek.roadassistantauthorization.user.validators;
 
-import io.malek.roadassistantauthorization.user.ValidatorInfo;
+import io.malek.roadassistantauthorization.user.dtos.ValidatorInfo;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Set;

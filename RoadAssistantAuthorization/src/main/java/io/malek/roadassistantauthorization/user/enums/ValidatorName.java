@@ -1,4 +1,4 @@
-package io.malek.roadassistantauthorization.user;
+package io.malek.roadassistantauthorization.user.enums;
 
 import lombok.Getter;
 

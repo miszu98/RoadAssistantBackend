@@ -1,8 +1,8 @@
 package io.malek.roadassistantauthorization.user.validators;
 
-import io.malek.roadassistantauthorization.user.UserCreationRequest;
-import io.malek.roadassistantauthorization.user.ValidatorInfo;
-import io.malek.roadassistantauthorization.user.ValidatorName;
+import io.malek.roadassistantauthorization.user.dtos.UserCreationRequest;
+import io.malek.roadassistantauthorization.user.dtos.ValidatorInfo;
+import io.malek.roadassistantauthorization.user.enums.ValidatorName;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashSet;
