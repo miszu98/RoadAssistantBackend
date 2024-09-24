@@ -1,0 +1,40 @@
+{
+  "processStatus": "COMPLETED",
+  "validatorInfos": [
+    {
+      "validatorName": "USER_FIRST_NAME_IS_NULL_VALIDATOR",
+      "status": "PASSED",
+      "message": null
+    },
+    {
+      "validatorName": "USER_PASSWORD_IS_NULL_VALIDATOR",
+      "status": "PASSED",
+      "message": null
+    },
+    {
+      "validatorName": "USER_PASSWORDS_EQUALITY_VALIDATOR",
+      "status": "PASSED",
+      "message": null
+    },
+    {
+      "validatorName": "USER_EMAIL_IS_NULL_VALIDATOR",
+      "status": "PASSED",
+      "message": null
+    },
+    {
+      "validatorName": "USER_CREATION_REQUEST_PROCESS_ID_IS_NULL_VALIDATOR",
+      "status": "PASSED",
+      "message": null
+    },
+    {
+      "validatorName": "USER_REPEAT_PASSWORD_IS_NULL_VALIDATOR",
+      "status": "PASSED",
+      "message": null
+    },
+    {
+      "validatorName": "USER_LAST_NAME_VALIDATOR",
+      "status": "PASSED",
+      "message": null
+    }
+  ]
+}

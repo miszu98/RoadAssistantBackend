@@ -1,10 +1,10 @@
 package io.malek.roadassistantauthorization.user.data_generators;
 
-import io.malek.roadassistantauthorization.user.*;
 import io.malek.roadassistantauthorization.user.dtos.Email;
 import io.malek.roadassistantauthorization.user.dtos.FirstName;
 import io.malek.roadassistantauthorization.user.dtos.HashPassword;
 import io.malek.roadassistantauthorization.user.dtos.LastName;
+import io.malek.roadassistantauthorization.user.register.User;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

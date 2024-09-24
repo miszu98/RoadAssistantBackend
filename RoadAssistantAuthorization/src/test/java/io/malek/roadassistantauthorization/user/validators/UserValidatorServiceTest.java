@@ -1,6 +1,6 @@
 package io.malek.roadassistantauthorization.user.validators;
 
-import io.malek.roadassistantauthorization.user.ProcessCannotBeExecuteException;
+import io.malek.roadassistantauthorization.general.exceptions.ProcessCannotBeExecuteException;
 import io.malek.roadassistantauthorization.user.dtos.UserCreationRequest;
 import io.malek.roadassistantauthorization.user.dtos.ValidatorInfo;
 import org.junit.jupiter.api.BeforeEach;

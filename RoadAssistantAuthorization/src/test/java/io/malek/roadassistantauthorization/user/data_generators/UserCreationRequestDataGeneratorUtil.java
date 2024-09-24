@@ -1,5 +1,6 @@
 package io.malek.roadassistantauthorization.user.data_generators;
 
+import io.malek.ProcessId;
 import io.malek.roadassistantauthorization.user.dtos.*;
 import io.malek.roadassistantauthorization.user.enums.ValidatorName;
 import io.malek.roadassistantauthorization.user.enums.ValidatorStatus;

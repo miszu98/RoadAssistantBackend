@@ -4,6 +4,7 @@ package io.malek.roadassistantauthorization.user.dtos;
 import io.malek.roadassistantauthorization.user.enums.ValidatorStatus;
 import io.malek.roadassistantauthorization.user.enums.ProcessStatus;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public record UserCreationResponse(ProcessStatus processStatus, Set<ValidatorInfo> validatorInfos) {
@@ -17,6 +18,10 @@ public record UserCreationResponse(ProcessStatus processStatus, Set<ValidatorInf
                 .map(ValidatorInfo::status)
                 .allMatch(validatorStatus -> validatorStatus == ValidatorStatus.PASSED);
         return allValidatorsPassed ? ProcessStatus.COMPLETED : ProcessStatus.FAILURE;
+    }
+
+    public static UserCreationResponse empty() {
+        return new UserCreationResponse(ProcessStatus.FAILURE, new HashSet<>());
     }
 
 }

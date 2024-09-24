@@ -1,5 +1,7 @@
 package io.malek.roadassistantauthorization.user.dtos;
 
+import io.malek.ProcessId;
+import io.malek.Process;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -10,7 +12,7 @@ import lombok.Value;
 @Value
 @AllArgsConstructor
 @Tag(name = "UserCreationRequest", description = "User creation request for register account in RoadAssistant app")
-public class UserCreationRequest {
+public class UserCreationRequest implements Process {
 
     @Schema(requiredMode = Schema.RequiredMode.REQUIRED, implementation = Email.class, description = "User email", example = "john.smith@gmail.com")
     Email email;

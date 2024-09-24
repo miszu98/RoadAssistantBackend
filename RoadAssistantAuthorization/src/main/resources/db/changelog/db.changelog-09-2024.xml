@@ -27,4 +27,16 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="add-created-at-column-to-request-table" author="Michal Malek">
+        <addColumn tableName="requests">
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="drop-nullable-constraint-from-response-data-field-in-request" author="Michal Malek">
+        <dropNotNullConstraint tableName="requests" columnName="response_data"/>
+    </changeSet>
+
 </databaseChangeLog>

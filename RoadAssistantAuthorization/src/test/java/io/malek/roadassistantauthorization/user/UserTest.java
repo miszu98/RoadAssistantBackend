@@ -2,6 +2,9 @@ package io.malek.roadassistantauthorization.user;
 
 import io.malek.roadassistantauthorization.user.dtos.Email;
 import io.malek.roadassistantauthorization.user.enums.RoleType;
+import io.malek.roadassistantauthorization.user.register.Role;
+import io.malek.roadassistantauthorization.user.register.User;
+import io.malek.roadassistantauthorization.user.register.UserRole;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

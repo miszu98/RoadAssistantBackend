@@ -1,10 +1,14 @@
 package io.malek.roadassistantauthorization.requests;
 
+import io.malek.Timestamp;
+import io.malek.roadassistantauthorization.requests.dtos.RequestData;
+import io.malek.roadassistantauthorization.requests.dtos.RequestStatusCode;
+import io.malek.roadassistantauthorization.requests.dtos.RequestUid;
+import io.malek.roadassistantauthorization.requests.dtos.ResponseData;
+import io.malek.roadassistantauthorization.requests.enums.RequestType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Builder
@@ -27,11 +31,13 @@ class Request {
     @AttributeOverride(name = "value", column = @Column(name = "request_uid"))
     private RequestUid requestUid;
 
+    @Setter
     @NotNull
     @Embedded
     @AttributeOverride(name = "value", column = @Column(name = "request_data"))
     private RequestData requestData;
 
+    @Setter
     @NotNull
     @Embedded
     @AttributeOverride(name = "value", column = @Column(name = "response_data"))
@@ -42,4 +48,10 @@ class Request {
     @AttributeOverride(name = "value", column = @Column(name = "code"))
     private RequestStatusCode code;
 
+    @Setter
+    @Getter
+    @NotNull
+    @Embedded
+    @AttributeOverride(name = "value", column = @Column(name = "created_at"))
+    private Timestamp createdAt;
 }
