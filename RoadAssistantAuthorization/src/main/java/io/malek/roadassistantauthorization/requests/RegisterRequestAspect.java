@@ -10,14 +10,12 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import static java.util.Objects.nonNull;
 
 @Slf4j
 @Aspect
-@Component
 @RequiredArgsConstructor
 class RegisterRequestAspect {
     private final RequestRegisterFacade requestRegisterFacade;
